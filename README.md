@@ -18,3 +18,17 @@ The application consists of an input field where you can enter your name. As you
 - JavaScript
 - CSS
 
+# React useState Infinite Loop Example
+
+This repository contains an example of an infinite loop that can occur when using the `useState` hook in React incorrectly. The code demonstrates the issue and provides an explanation of how to avoid it.
+
+## Problem Description
+
+The code snippet in this repository showcases the problem of an infinite loop that can occur when updating the state inside the `useEffect` hook. Specifically, it demonstrates the incorrect usage of the `useState` hook in the following manner:
+
+```jsx
+const [renderCount, setRenderCount] = useState(0);
+
+useEffect(() => {
+  setRenderCount(renderCount => renderCount + 1);
+}, []);
